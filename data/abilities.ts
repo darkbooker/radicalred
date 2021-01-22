@@ -1195,6 +1195,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 177,
 	},
+	blazingsoul: {
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move?.type === 'Fire' && pokemon.hp === pokemon.maxhp) return priority + 1;
+		},
+		name: "Blazing Soul",
+		rating: 3,
+		num: 177,
+	},
 	galvanize: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
